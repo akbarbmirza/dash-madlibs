@@ -8,6 +8,7 @@
 <body>
   
   <div class="prompt"></div>
+  <button>Next Prompt</button>
   
   <script>
     // List of prompts for the user
@@ -17,15 +18,21 @@
       'Type a noun'
     ];
     
-    // Keep track of the current prompt we're on
-    var currentPrompt = 0;
-    
-    // Put first prompt in all html elements with class prompt
-    $('.prompt').html(prompts[currentPrompt]);
-    
     // Alert for Debugging
     // alert(prompts.length);
     
+    // Keep track of the current prompt we're on
+    var currentPrompt = 0;
+    
+    var nextPrompt = function() {
+      // Put first prompt in all html elements with class prompt
+      $('.prompt').html(prompts[currentPrompt]);
+    }
+    
+    // Run nextPrompt function when button is clicked
+    $('button').click(function() {
+      nextPrompt();
+    });
   </script>
 </body>
 </html>
