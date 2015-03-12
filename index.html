@@ -17,8 +17,11 @@
       'Type a noun'
     ];
     
+    // Keep track of the current prompt we're on
+    var currentPrompt = 0;
+    
     // Put first prompt in all html elements with class prompt
-    $('.prompt').html(prompts[2]);
+    $('.prompt').html(prompts[currentPrompt]);
     
     // Alert for Debugging
     // alert(prompts.length);
