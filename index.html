@@ -25,11 +25,19 @@
     var currentPrompt = 0;
     
     var nextPrompt = function() {
-      // Put first prompt in all html elements with class prompt
-      $('.prompt').html(prompts[currentPrompt]);
-      
-      // Move the next prompt into variable currentPrompt
-      currentPrompt += 1;
+      // If there is a next prompt
+      if (currentPrompt < prompts.length) {
+        // Put first prompt in all html elements with class prompt
+        $('.prompt').html(prompts[currentPrompt]);
+
+        // Move the next prompt into variable currentPrompt
+        currentPrompt += 1;
+      }
+      // Or else if we're at the end of the array
+      else {
+        // Put a new message into the html
+        $('.prompt').html("That's all for now!");
+      }
     }
     
     // Run nextPrompt function when button is clicked
