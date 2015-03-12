@@ -7,6 +7,8 @@
 </head>
 <body>
   
+  <div class="prompt"></div>
+  
   <script>
     // List of prompts for the user
     var prompts = [
@@ -14,6 +16,9 @@
       'Type an adjective',
       'Type a noun'
     ];
+    
+    // Put first prompt in all html elements with class prompt
+    $('.prompt').html(prompts[2]);
     
     // Alert for Debugging
     // alert(prompts.length);
