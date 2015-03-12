@@ -18,26 +18,37 @@
       'Type a noun'
     ];
     
-    // Alert for Debugging
-    // alert(prompts.length);
+    // List of answers that the user gives
+    var answers = [];
     
     // Keep track of the current prompt we're on
     var currentPrompt = 0;
     
     var nextPrompt = function() {
+      // there's no answer the first time nextPrompt runs
+      if (currentPrompt != 0) {
+        answers.push($('input').val());
+      }
+      
       // If there is a next prompt
       if (currentPrompt < prompts.length) {
-        // Put first prompt in all html elements with class prompt
-        $('.prompt').html(prompts[currentPrompt]);
+        // Put prompt and form into html
+        $('.prompt').html(prompts[currentPrompt] + '<br><input type="text">');
 
         // Move the next prompt into variable currentPrompt
         currentPrompt += 1;
       }
       // Or else if we're at the end of the array
       else {
-        // Put a new message into the html
-        $('.prompt').html("That's all for now!");
+        // run showFinal to put the answers in html
+        showFinal();
       }
+    }
+    
+    // Puts the user's input into the html
+    var showFinal = function() {
+      // $('.prompt').html(answers.split().join(' '));
+      $('.prompt').html(answers[0] + ' ' + answers[1] + ' ' + answers[2]);
     }
     
     // Run nextPrompt function when button is clicked
