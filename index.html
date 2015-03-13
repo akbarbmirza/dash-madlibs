@@ -67,8 +67,9 @@
     
     // Puts the user's input into the html
     var showFinal = function() {
-      $('.prompt').html('This is the story of ' + answers[0] +
-                        ' and the ' + answers[1] + ' ' + answers[2]);
+      $('.prompt').html('This is the story of <span class="fill">' + answers[0] +
+                        '</span> and the <span class="fill">' + answers[1] +
+                        '</span> <span class="fill">' + answers[2] + '</span>.');
       
       // and then hide the button
       $('button').hide();
