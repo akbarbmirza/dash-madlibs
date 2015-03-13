@@ -47,8 +47,12 @@
     
     // Puts the user's input into the html
     var showFinal = function() {
-      // $('.prompt').html(answers.split().join(' '));
-      $('.prompt').html(answers[0] + ' ' + answers[1] + ' ' + answers[2]);
+      $('.prompt').html('This is the story of ' + answers[0] +
+                        ' and the ' + answers[1] + ' ' + answers[2]);
+      
+      // and then hide the button
+      $('button').hide();
+      
     }
     
     // Run nextPrompt function when button is clicked
